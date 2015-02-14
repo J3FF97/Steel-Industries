@@ -1,0 +1,21 @@
+[
+{
+  "modid": "SteelIndustries",
+  "name": "SteelIndustries",
+  "description": "Industrialise your world!",
+  "version": "1.7.10-0.6",
+  "mcversion": "1.7.10",
+  "url": "https://mods.io/mods/1082-steel-industries",
+  "updateUrl": "",
+  "authorList": [
+    "J3FF97"
+  ],
+  "credits": "J3FF97, Pahimar (For LMRB)",
+  "logoFile": "",
+  "screenshots": [
+  ],
+  "parent":"",
+  "dependencies": [
+  ]
+}
+]

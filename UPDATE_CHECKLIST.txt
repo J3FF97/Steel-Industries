@@ -1,0 +1,7 @@
+Checklist for updating SteelIndustries after a release:
+
+- Check if the version has been updated in Reference
+- Check if the version has been updated in MCMOD.info
+- Check if the version has been updated in build.gradle
+- Major release? (new features, major stuff) new number (0.5 > 0.6)
+- Minor release? (bugfixes) new letter ( 0.5a > 0.5b)
