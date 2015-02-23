@@ -1,6 +1,8 @@
 package com.j3ff97.steelindustries;
 
 import com.j3ff97.steelindustries.handler.ConfigurationHandler;
+import com.j3ff97.steelindustries.init.OreDict;
+import com.j3ff97.steelindustries.init.Recipes;
 import com.j3ff97.steelindustries.init.ModBlocks;
 import com.j3ff97.steelindustries.init.ModItems;
 import com.j3ff97.steelindustries.proxy.IProxy;
@@ -46,6 +48,12 @@ public class SteelIndustries
     public static void init(FMLInitializationEvent event)
     {
         LogHelper.info("SteelIndustries: Starting Init");
+
+        OreDict.init();
+        LogHelper.info("SteelIndustries: Initialized Oredict Compatibility");
+
+        Recipes.initCrafting();
+        LogHelper.info("SteelIndustries: Initialized Crafting");
 
 
         LogHelper.info("SteelIndustries: Init Complete");

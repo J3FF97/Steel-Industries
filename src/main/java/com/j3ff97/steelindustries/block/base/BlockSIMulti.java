@@ -1,4 +1,4 @@
-package com.j3ff97.steelindustries.block;
+package com.j3ff97.steelindustries.block.base;
 
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -8,9 +8,9 @@ public class BlockSIMulti extends BlockSI
 {
     private IIcon[] icons = new IIcon[3];
 
-    public BlockSIMulti(Material material)
+    public BlockSIMulti(String name, Material material, String toolClass, int harvestLevel)
     {
-        super(material);
+        super(name,material, toolClass, harvestLevel);
     }
 
     @Override

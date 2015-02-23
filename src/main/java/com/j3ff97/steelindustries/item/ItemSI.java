@@ -10,9 +10,10 @@ import net.minecraft.item.ItemStack;
 
 public class ItemSI extends Item
 {
-    public ItemSI()
+    public ItemSI(String name)
     {
         super();
+        this.setUnlocalizedName(name);
         this.setCreativeTab(CreativeTab.SI_TAB);
     }
 

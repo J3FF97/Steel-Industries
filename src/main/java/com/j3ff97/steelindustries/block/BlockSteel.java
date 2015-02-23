@@ -1,20 +1,17 @@
 package com.j3ff97.steelindustries.block;
 
-
-import com.j3ff97.steelindustries.reference.Reference;
+import com.j3ff97.steelindustries.block.base.BlockSI;
+import com.j3ff97.steelindustries.block.base.BlockSIMulti;
 import net.minecraft.block.material.Material;
 
 public class BlockSteel extends BlockSIMulti
 {
-    public BlockSteel(String name, Material material, int harvestLevel)
+    public BlockSteel(String name, Material material, String toolClass,  int harvestLevel)
     {
-        super(material);
-        this.setBlockName(name);
-        this.setBlockTextureName(Reference.ID + ":" + name);
+        super(name,material, toolClass, harvestLevel);
         this.setHardness(5F);
         this.setResistance(30F);
         this.setStepSound(BlockSI.soundTypeMetal);
-        this.setHarvestLevel("pickaxe", harvestLevel);
 
     }
 }

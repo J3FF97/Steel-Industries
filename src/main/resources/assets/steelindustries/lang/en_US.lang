@@ -26,10 +26,9 @@ tile.steelindustries:oreRutile.name=Rutile Ore
 tile.steelindustries:oreGraphite.name=Graphite Ore
 tile.steelindustries:blockTitanium.name=Titanium Block
 tile.steelindustries:blockSteel.name=Steel Block
-tile.steelindustries:blockMiners.name=Miner's Block
-
+tile.steelindustries:oreSilicon.name=Silicon Ore
 //Only one that's a bit wonky since it does not extend block but blockFalling//
-tile.oreSilicon.name=Silicon Ore
+
 
 --Fancy Stuff--
 //Same story here, they don't extend Block, but others.//
