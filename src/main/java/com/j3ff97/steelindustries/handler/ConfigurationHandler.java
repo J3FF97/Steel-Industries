@@ -12,6 +12,12 @@ public class ConfigurationHandler
 {
     public static Configuration configuration;
 
+    public static int oreRutileSpawnChance = 5;
+    public static int oreSiliconSpawnChance = 10;
+    public static int oreGraphiteSpawnChance = 20;
+    public static int graphiteBurnTime = 3200;
+    public static boolean flintAndSteel = true;
+
     public static boolean testBoolean = true;
 
     public static void init(File configFile)
@@ -27,6 +33,21 @@ public class ConfigurationHandler
     public static void loadConfiguration()
     {
         String desc;
+
+        desc = "With this you can change the burn time of Graphite. Default: 3200 (2x coal, 16 items). Use -1 to disable.";
+        graphiteBurnTime = getInt("graphiteBurnTimeName", graphiteBurnTime, desc);
+
+        desc = "With this you can change the spawn chance of Graphite Ore. Use -1 to disable.";
+        oreGraphiteSpawnChance = getInt("oreGraphiteSpawnChance", oreGraphiteSpawnChance, desc);
+
+        desc = "With this you can change the spawn chance of Silicon Ore. Use -1 to disable.";
+        oreSiliconSpawnChance = getInt("oreSiliconSpawnChance", oreSiliconSpawnChance, desc);
+
+        desc = "With this you can change the spawn chance of Rutile Ore. Use -1 to disable.";
+        oreRutileSpawnChance = getInt("oreRutileSpawnChance", oreRutileSpawnChance, desc);
+
+        desc = "Wether or not to use Steel for flint and steel.";
+        flintAndSteel = getBool("flintAndSteel", flintAndSteel, desc);
 
         desc = "TestBoolean";
         testBoolean = getBool("testBool", testBoolean, desc);

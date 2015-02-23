@@ -12,7 +12,6 @@ item.steelindustries:itemSteelMesh.name=Steel Chain Mesh
 item.steelindustries:rawSilicon.name=Raw Silicon
 item.steelindustries:refinedSilicon.name=Silicon Wafer
 item.steelindustries:chunkGraphite.name=Graphite Bar
-item.steelindustries:dustTitanium.name=Titanium Dust
 item.steelindustries:ingotTitanium.name=Titanium Ingot
 item.steelindustries:nuggetTitanium.name=Titanium Nugget
 
@@ -27,12 +26,10 @@ tile.steelindustries:oreGraphite.name=Graphite Ore
 tile.steelindustries:blockTitanium.name=Titanium Block
 tile.steelindustries:blockSteel.name=Steel Block
 tile.steelindustries:oreSilicon.name=Silicon Ore
-//Only one that's a bit wonky since it does not extend block but blockFalling//
+tile.steelindustries:barSteel.name=Steel Bars
 
 
---Fancy Stuff--
-//Same story here, they don't extend Block, but others.//
-tile.barSteel.name=Steel Bars
+
 tile.wallSteel.name=Steel Wall
 tile.slabSteel.name=Steel Slab
 tile.doubleSlabSteel.name=Double Steel Slab

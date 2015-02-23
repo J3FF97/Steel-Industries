@@ -3,6 +3,7 @@ package com.j3ff97.steelindustries.init;
 import com.j3ff97.steelindustries.block.*;
 import com.j3ff97.steelindustries.block.base.BlockSI;
 import com.j3ff97.steelindustries.block.base.BlockSIMulti;
+import com.j3ff97.steelindustries.block.base.BlockSIPane;
 import com.j3ff97.steelindustries.reference.Names;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.BlockFalling;
@@ -14,6 +15,7 @@ public class ModBlocks
     public static BlockSIMulti blockTitanium;
     public static BlockSI      oreGraphite;
     public static BlockSI      oreRutile;
+    public static BlockSIPane  steelBars;
     public static BlockFalling oreSilicon;
 
     public static void init()
@@ -23,11 +25,13 @@ public class ModBlocks
         oreGraphite = new OreGraphite(Names.Blocks.oreGraphiteName, Material.rock, "pickaxe", 1);
         oreRutile = new OreRutile(Names.Blocks.oreRutileName, Material.rock, "pickaxe", 2);
         oreSilicon = new OreSilicon(Names.Blocks.oreSiliconName, Material.sand, "shovel", 0);
+        steelBars = new SteelBars(Names.Blocks.barSteelName, "steelIndustries:steel_bars","steelIndustries:steel_bars", Material.iron, true, "pickaxe", 2 );
 
         GameRegistry.registerBlock(blockSteel, Names.Blocks.blockSteelName);
         GameRegistry.registerBlock(blockTitanium, Names.Blocks.blockTitaniumName);
         GameRegistry.registerBlock(oreGraphite, Names.Blocks.oreGraphiteName);
         GameRegistry.registerBlock(oreRutile, Names.Blocks.oreRutileName);
         GameRegistry.registerBlock(oreSilicon, Names.Blocks.oreSiliconName);
+        GameRegistry.registerBlock(steelBars, Names.Blocks.barSteelName);
     }
 }
