@@ -25,7 +25,7 @@ public class ModBlocks
         oreGraphite = new OreGraphite(Names.Blocks.oreGraphiteName, Material.rock, "pickaxe", 1);
         oreRutile = new OreRutile(Names.Blocks.oreRutileName, Material.rock, "pickaxe", 2);
         oreSilicon = new OreSilicon(Names.Blocks.oreSiliconName, Material.sand, "shovel", 0);
-        steelBars = new SteelBars(Names.Blocks.barSteelName, "steelIndustries:steel_bars","steelIndustries:steel_bars", Material.iron, true, "pickaxe", 2 );
+        steelBars = new SteelBars(Names.Blocks.barSteelName, "steelIndustries:steel_bars", "steelIndustries:steel_bars", Material.iron, true, "pickaxe", 2);
 
         GameRegistry.registerBlock(blockSteel, Names.Blocks.blockSteelName);
         GameRegistry.registerBlock(blockTitanium, Names.Blocks.blockTitaniumName);

@@ -16,7 +16,7 @@ public class BlockSI extends Block
         this.setBlockName(name);
         this.setBlockTextureName(Reference.ID + ":" + name);
         this.setHarvestLevel(toolClass, harvestLevel);
-        this.setCreativeTab(CreativeTab.SI_TAB);
+        this.setCreativeTab(CreativeTab.tabSIBlocks);
     }
 
 

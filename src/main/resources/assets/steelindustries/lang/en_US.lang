@@ -2,7 +2,14 @@
 tile.null.name=Bro, missed something?
 item.null.name=Bro, missed something?
 
---Items--
+itemGroup.tabSIItems=Steel Industries Items
+itemGroup.tabSIBlocks=Steel Industries Blocks
+
+graphiteBurnTimeName=Graphite Burn Time
+oreRutileSpawnChance=Spawn Chance: Rutile Ore
+oreGraphiteSpawnChance=Spawn Chance: Graphite Ore
+oreSiliconSpawnChance=Spawn Chance: Silicon Ore
+flintAndSteel=Use Steel For Flint And Steel
 
 item.steelindustries:ingotSteel.name=Steel Ingot
 item.steelindustries:nuggetSteel.name=Steel Nugget
@@ -15,12 +22,32 @@ item.steelindustries:chunkGraphite.name=Graphite Bar
 item.steelindustries:ingotTitanium.name=Titanium Ingot
 item.steelindustries:nuggetTitanium.name=Titanium Nugget
 
---AddonItems--
-
+item.steelindustries:swordSteel.name=Steel Sword
+item.steelindustries:pickaxeSteel.name=Steel Pickaxe
+item.steelindustries:axeSteel.name=Steel Axe
+item.steelindustries:shovelSteel.name=Steel Shovel
+item.steelindustries:hoeSteel.name=Steel Hoe
+item.steelindustries:shearsSteel.name=Steel Shears
+item.steelindustries:swordTitanium.name=Titanium Sword
+item.steelindustries:pickaxeTitanium.name=Titanium Pickaxe
+item.steelindustries:axeTitanium.name=Titanium Axe
+item.steelindustries:shovelTitanium.name=Titanium Shovel
+item.steelindustries:hoeTitanium.name=Titanium Hoe
+item.steelindustries:shearsTitanium.name=Titanium Shears
+item.steelindustries:sickleSteel.name=Steel Sickle
+item.steelindustries:sickleTitanium.name=Titanium Sickle
 item.steelindustries:wandcapSteel.name=Steel Cap
 item.steelindustries:wandcapTitanium.name=Titanium Cap
 
---Blocks--
+item.steelindustries:helmetSteel.name=Steel Helmet
+item.steelindustries:chestplateSteel.name=Steel Chestplate
+item.steelindustries:legsSteel.name=Steel Leggings
+item.steelindustries:bootsSteel.name=Steel Boots
+item.steelindustries:helmetTitanium.name=Titanium Helmet
+item.steelindustries:chestplateTitanium.name=Titanium Chestplate
+item.steelindustries:legsTitanium.name=Titanium Leggings
+item.steelindustries:bootsTitanium.name=Titanium Boots
+
 tile.steelindustries:oreRutile.name=Rutile Ore
 tile.steelindustries:oreGraphite.name=Graphite Ore
 tile.steelindustries:blockTitanium.name=Titanium Block
@@ -28,69 +55,23 @@ tile.steelindustries:blockSteel.name=Steel Block
 tile.steelindustries:oreSilicon.name=Silicon Ore
 tile.steelindustries:barSteel.name=Steel Bars
 
-
-
-tile.wallSteel.name=Steel Wall
-tile.slabSteel.name=Steel Slab
-tile.doubleSlabSteel.name=Double Steel Slab
-tile.stairsSteel.name=Steel Stairs
-
---Tools--
-//Same for tools and armor//
-
-item.swordSteel.name=Steel Sword
-item.pickaxeSteel.name=Steel Pickaxe
-item.axeSteel.name=Steel Axe
-item.shovelSteel.name=Steel Shovel
-item.hoeSteel.name=Steel Hoe
-item.shearsSteel.name=Steel Shears
-item.swordTitanium.name=Titanium Sword
-item.pickaxeTitanium.name=Titanium Pickaxe
-item.axeTitanium.name=Titanium Axe
-item.shovelTitanium.name=Titanium Shovel
-item.hoeTitanium.name=Titanium Hoe
-item.shearsTitanium.name=Titanium Shears
-
---Armor--
-
-item.helmetSteel.name=Steel Helmet
-item.chestplateSteel.name=Steel Chestplate
-item.legsSteel.name=Steel Leggings
-item.bootsSteel.name=Steel Boots
-item.helmetTitanium.name=Titanium Helmet
-item.chestplateTitanium.name=Titanium Chestplate
-item.legsTitanium.name=Titanium Leggings
-item.bootsTitanium.name=Titanium Boots
-
---Misc--
-itemGroup.steelindustries=Steel Industries
-
---Config--
-graphiteBurnTimeName=Graphite Burn Time
-oreRutileSpawnChance=Spawn Chance: Rutile Ore
-oreGraphiteSpawnChance=Spawn Chance: Graphite Ore
-oreSiliconSpawnChance=Spawn Chance: Silicon Ore
-useTERecipes=Using Thermal Expansion Recipes
-
---TC Stuff--
-
--Category
 tc.research_category.STEELINDUSTRIES=Industrial Magic
 
--Prefixes
 item.Wand.steel.cap=Steel Reinforced
 item.Wand.titanium.cap=Titanium Reinforced
-
--Research
 
 tc.research_name.CAP_steel=Steel Wand Caps
 tc.research_name.CAP_titanium=Titanium Wand Caps
 
-tc.research_name.TRANSSTEEL=Steel Transmutation
-tc.research_name.TRANSTITANIUM=Titanium Transmutation
+tc.research_name.steel_transmutation=Steel Transmutation
+tc.research_name.titanium_transmutation=Titanium Transmutation
 
 tc.research_text.CAP_steel=FullMetal Wand Caps: Does not make you an alchemist....
-tc.research_text.TRANSSTEEL=FullMetal Transmutation: But this does!
+tc.research_text.CAP_titanium=Better than Steel!
+tc.research_text.steel_transmutation=FullMetal Transmutation: But this does!
+tc.research_text.titanium_transmutation=Refined Alchemist: Even more strength!
 
-SteelCap.research.text=While researching you found a way to infuse non magical steel with magic to create magical wand caps. <BR><BR><BR>These caps do not take any penalty when used to channel magic, but they do not have any benefits.<BR><BR><BR>But hey! At least it didn't cost you an arm and a leg!
-SteelTrans.research.text=You have refined your transmutation research in such a way so that you can also transmute metals WITHOUT magical properties!<BR><BR><BR>WARNING: While performing the transmutation accidents may happen, don't come crying to me if you lose an arm or a leg, go and make your own replacement!
+steelCap.research.text=While researching you found a way to infuse non magical steel with magic to create magical wand caps. <BR><BR>These caps do not take any penalty when used to channel magic, but they do not have any benefits.<BR><BR>But hey! At least it didn't cost you an arm and a leg!
+titaniumCap.research.text=Some metals are better suited for applying magic than others, and titanium seems to be able to conduct magic quite well. <BR><BR> The only problem is that you can't help but think that a metal made with magic would be better for applying it than a normal one... Might be your imagination though...
+steelTrans.research.text=You have refined your transmutation research in such a way so that you can also transmute metals WITHOUT magical properties!<BR><BR>DISCLAIMER: While performing the transmutation accidents may happen, don't come crying to me if you lose an arm or a leg, go and make your own replacement!
+titaniumTrans.research.text=You have discovered that Titanium has a similar composition as Steel... Or something like that... Now to be honest... You were just screwing around when you discovered this. <BR><BR>DISCLAIMER: While performing the transmutation accidents may happen, don't come crying to me if you lose an arm or a leg, go and make your own replacement! (HINT: Titanium is stronger than steel!)

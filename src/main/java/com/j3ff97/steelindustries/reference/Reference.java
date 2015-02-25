@@ -9,4 +9,7 @@ public class Reference
     public static final String SERVER_PROXY = "com.j3ff97.steelindustries.proxy.ServerProxy";
     public static final String GUIFACTORY = "com.j3ff97.steelindustries.client.gui.GuiFactory";
     public static final String AUTHOR = "J3FF97";
+    public static final String DEPENDENCIES = "after:Thaumcraft";
+
+    public static final String RESEARCH_KEY = "STEELINDUSTRIES";
 }

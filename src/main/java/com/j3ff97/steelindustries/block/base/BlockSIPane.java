@@ -11,7 +11,7 @@ public class BlockSIPane extends BlockPane
     {
         super(texture, icon, material, par4bool);
         this.setBlockName(name);
-        this.setCreativeTab(CreativeTab.SI_TAB);
+        this.setCreativeTab(CreativeTab.tabSIBlocks);
         this.setHarvestLevel(toolClass, harvestLevel);
     }
 

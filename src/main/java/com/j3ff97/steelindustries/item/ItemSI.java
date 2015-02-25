@@ -14,7 +14,7 @@ public class ItemSI extends Item
     {
         super();
         this.setUnlocalizedName(name);
-        this.setCreativeTab(CreativeTab.SI_TAB);
+        this.setCreativeTab(CreativeTab.tabSIItems);
     }
 
     @Override

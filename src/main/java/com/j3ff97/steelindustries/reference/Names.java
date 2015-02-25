@@ -20,26 +20,11 @@ public final class Names
     {
 
         public static final String blockSteelName     = "blockSteel";
-        public static final String blockMinersName    = "blockMiners";
         public static final String oreRutileName      = "oreRutile";
         public static final String oreSiliconName     = "oreSilicon";
         public static final String oreGraphiteName    = "oreGraphite";
         public static final String blockTitaniumName  = "blockTitanium";
-        public static final String blockSteelDoorName = "blockSteelDoor";
-
-        //Fancy Blocks
-
         public static final String barSteelName        = "barSteel";
-        public static final String wallSteelName       = "wallSteel";
-        public static final String slabSteelName       = "slabSteel";
-        public static final String doubleslabSteelName = "doubleSlabSteel";
-        public static final String stairsSteelName     = "stairsSteel";
-
-        public static final String wallTitaniumName       = "wallTitanium";
-        public static final String slabTitaniumName       = "slabTitanium";
-        public static final String doubleslabTitaniumName = "doubleSlabTitanium";
-        public static final String stairsTitaniumName     = "stairsTitanium";
-
     }
 
     public static final class Tools
@@ -85,10 +70,17 @@ public final class Names
 
     public static final class Addons
     {
-        //Addons
-
         public static final String wandCapSteelName    = "wandcapSteel";
         public static final String wandCapTitaniumName = "wandcapTitanium";
+        public static final String steelTag    = "steel";
+        public static final String titaniumTag = "titanium";
     }
 
+    public class Text
+    {
+        public static final String CAP_steel              = "steelCap.research.text";
+        public static final String CAP_titanium           = "titaniumCap.research.text";
+        public static final String steel_transmutation    = "steelTrans.research.text";
+        public static final String titanium_transmutation = "titaniumTrans.research.text";
+    }
 }
