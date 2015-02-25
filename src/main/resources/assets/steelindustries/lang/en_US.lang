@@ -13,7 +13,6 @@ flintAndSteel=Use Steel For Flint And Steel
 
 item.steelindustries:ingotSteel.name=Steel Ingot
 item.steelindustries:nuggetSteel.name=Steel Nugget
-item.steelindustries:nuggetIron.name=Iron Nugget
 item.steelindustries:itemIronCompound.name=Iron Coal Compound
 item.steelindustries:itemSteelMesh.name=Steel Chain Mesh
 item.steelindustries:rawSilicon.name=Raw Silicon

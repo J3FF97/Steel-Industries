@@ -1,0 +1,76 @@
+﻿--If Derp Then--
+tile.null.name=Bro, missed something?
+item.null.name=Bro, missed something?
+
+itemGroup.tabSIItems=Steel Industries:アイテム
+itemGroup.tabSIBlocks=Steel Industries:ブロック
+
+graphiteBurnTimeName=Graphite Burn Time
+oreRutileSpawnChance=生成率: ルチル鉱石
+oreGraphiteSpawnChance=生成率: 石墨
+oreSiliconSpawnChance=生成率: シリコン鉱石
+flintAndSteel=Use Steel For Flint And Steel
+
+item.steelindustries:ingotSteel.name=鋼鉄インゴット
+item.steelindustries:nuggetSteel.name=鋼鉄塊
+item.steelindustries:itemIronCompound.name=炭素鋼
+item.steelindustries:itemSteelMesh.name=鋼鉄の鎖布
+item.steelindustries:rawSilicon.name=シリコン原料
+item.steelindustries:refinedSilicon.name=シリコンウェハー
+item.steelindustries:chunkGraphite.name=グラファイトの延べ棒
+item.steelindustries:ingotTitanium.name=チタンインゴット
+item.steelindustries:nuggetTitanium.name=チタン塊
+
+item.steelindustries:swordSteel.name=鋼鉄の剣
+item.steelindustries:pickaxeSteel.name=鋼鉄のツルハシ
+item.steelindustries:axeSteel.name=鋼鉄の斧
+item.steelindustries:shovelSteel.name=鋼鉄のシャベル
+item.steelindustries:hoeSteel.name=鋼鉄のクワ
+item.steelindustries:shearsSteel.name=鋼鉄のハサミ
+item.steelindustries:swordTitanium.name=チタンの剣
+item.steelindustries:pickaxeTitanium.name=チタンのツルハシ
+item.steelindustries:axeTitanium.name=チタンの斧
+item.steelindustries:shovelTitanium.name=チタンのシャベル
+item.steelindustries:hoeTitanium.name=チタンのクワ
+item.steelindustries:shearsTitanium.name=チタンのハサミ
+item.steelindustries:sickleSteel.name=鋼鉄の鎌
+item.steelindustries:sickleTitanium.name=チタンの鎌
+item.steelindustries:wandcapSteel.name=鋼鉄の石突
+item.steelindustries:wandcapTitanium.name=チタンの石突
+
+item.steelindustries:helmetSteel.name=鋼鉄ヘルメット
+item.steelindustries:chestplateSteel.name=鋼鉄のチェストプレート
+item.steelindustries:legsSteel.name=鋼鉄のレギンス
+item.steelindustries:bootsSteel.name=鋼鉄のブーツ
+item.steelindustries:helmetTitanium.name=チタンのヘルメット
+item.steelindustries:chestplateTitanium.name=チタンのチェストプレート
+item.steelindustries:legsTitanium.name=チタンのレギンス
+item.steelindustries:bootsTitanium.name=チタンのブーツ
+
+tile.steelindustries:oreRutile.name=ルチル鉱石
+tile.steelindustries:oreGraphite.name=石墨
+tile.steelindustries:blockTitanium.name=チタンブロック
+tile.steelindustries:blockSteel.name=鋼鉄ブロック
+tile.steelindustries:oreSilicon.name=シリコン砂
+tile.steelindustries:barSteel.name=鋼鉄格子
+
+tc.research_category.STEELINDUSTRIES=工業的魔術
+
+item.Wand.steel.cap=Steel Reinforced
+item.Wand.titanium.cap=Titanium Reinforced
+
+tc.research_name.CAP_steel=鋼鉄の石突
+tc.research_name.CAP_titanium=チタンの石突
+
+tc.research_name.steel_transmutation=Steel Transmutation
+tc.research_name.titanium_transmutation=Titanium Transmutation
+
+tc.research_text.CAP_steel=FullMetal Wand Caps: Does not make you an alchemist....
+tc.research_text.CAP_titanium=Better than Steel!
+tc.research_text.steel_transmutation=FullMetal Transmutation: But this does!
+tc.research_text.titanium_transmutation=Refined Alchemist: Even more strength!
+
+steelCap.research.text=While researching you found a way to infuse non magical steel with magic to create magical wand caps. <BR><BR>These caps do not take any penalty when used to channel magic, but they do not have any benefits.<BR><BR>But hey! At least it didn't cost you an arm and a leg!
+titaniumCap.research.text=Some metals are better suited for applying magic than others, and titanium seems to be able to conduct magic quite well. <BR><BR> The only problem is that you can't help but think that a metal made with magic would be better for applying it than a normal one... Might be your imagination though...
+steelTrans.research.text=You have refined your transmutation research in such a way so that you can also transmute metals WITHOUT magical properties!<BR><BR>DISCLAIMER: While performing the transmutation accidents may happen, don't come crying to me if you lose an arm or a leg, go and make your own replacement!
+titaniumTrans.research.text=You have discovered that Titanium has a similar composition as Steel... Or something like that... Now to be honest... You were just screwing around when you discovered this. <BR><BR>DISCLAIMER: While performing the transmutation accidents may happen, don't come crying to me if you lose an arm or a leg, go and make your own replacement! (HINT: Titanium is stronger than steel!)
