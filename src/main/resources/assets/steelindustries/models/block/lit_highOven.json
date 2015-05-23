@@ -1,0 +1,8 @@
+{
+  "parent": "block/orientable",
+  "textures": {
+    "top": "steelindustries:blocks/highOven_top",
+    "front": "steelindustries:blocks/highOven_front_on",
+    "side": "steelindustries:blocks/highOven_side"
+  }
+}

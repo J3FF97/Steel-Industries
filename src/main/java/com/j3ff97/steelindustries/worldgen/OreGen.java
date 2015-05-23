@@ -1,13 +1,17 @@
 package com.j3ff97.steelindustries.worldgen;
 
+import com.google.common.base.Predicate;
 import com.j3ff97.steelindustries.handler.ConfigurationHandler;
 import com.j3ff97.steelindustries.init.ModBlocks;
-import cpw.mods.fml.common.IWorldGenerator;
 import net.minecraft.block.Block;
+import net.minecraft.block.state.IBlockState;
+import net.minecraft.block.state.pattern.BlockHelper;
 import net.minecraft.init.Blocks;
+import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
+import net.minecraftforge.fml.common.IWorldGenerator;
 
 import java.util.Random;
 
@@ -15,7 +19,7 @@ public class OreGen implements IWorldGenerator
 {
     public void generate(Random random, int x, int z, World world, IChunkProvider chunkGenerator, IChunkProvider chunkProvider)
     {
-        switch(world.provider.dimensionId)
+        switch(world.provider.getDimensionId())
         {
             case -1:
                 generateNether(world, random, x * 16, z * 16);
@@ -35,9 +39,9 @@ public class OreGen implements IWorldGenerator
 
     private void generateSurface(World world, Random random, int x, int z)
     {
-        addOreSpawn(ModBlocks.oreGraphite, world, random, Blocks.coal_ore, x, z, 8, 8, 25, ConfigurationHandler.oreGraphiteSpawnChance, 0, 128);
-        addOreSpawn(ModBlocks.oreRutile, world, random, Blocks.stone, x, z, 8, 8, 7, ConfigurationHandler.oreRutileSpawnChance, 0, 16);
-        addOreSpawn(ModBlocks.oreSilicon, world, random, Blocks.sand, x, z, 8, 8, 5, ConfigurationHandler.oreSiliconSpawnChance, 0, 128);
+        addOreSpawn(ModBlocks.oreGraphite.getDefaultState(), world, random, Blocks.coal_ore, x, z, 8, 8, 25, ConfigurationHandler.oreGraphiteSpawnChance, 0, 128);
+        addOreSpawn(ModBlocks.oreRutile.getDefaultState(), world, random, Blocks.stone, x, z, 8, 8, 7, ConfigurationHandler.oreRutileSpawnChance, 0, 16);
+        addOreSpawn(ModBlocks.oreSilicon.getDefaultState(), world, random, Blocks.sand, x, z, 8, 8, 5, ConfigurationHandler.oreSiliconSpawnChance, 0, 128);
     }
 
     private void generateNether(World world, Random random, int x, int z)
@@ -62,7 +66,7 @@ public class OreGen implements IWorldGenerator
      * @param maxY           int for the maximum Y-Coordinate height at which this block may spawn
      */
 
-    public void addOreSpawn(Block block, World world, Random random, Block target, int blockXPos, int blockZPos, int maxX, int maxZ, int maxVeinSize, int chancesToSpawn, int minY, int maxY)
+    public void addOreSpawn(IBlockState block, World world, Random random, Block target, int blockXPos, int blockZPos, int maxX, int maxZ, int maxVeinSize, int chancesToSpawn, int minY, int maxY)
     {
         assert minY > 0 :               "addOreSpawn: The minimum Y-coord must be greater than 0";
         assert maxY > minY :            "addOreSpawn: The maximum Y-coord must be greater than the min Y-coord";
@@ -71,12 +75,15 @@ public class OreGen implements IWorldGenerator
         assert maxY < 256 && maxY > 0 : "addOreSpawn: The maximum Y-coord must be less than 256 but greater than 0";
 
         int diffbtwnMinMaxY = maxY - minY;
+
+
         for(int x = 0; x < chancesToSpawn; x++)
         {
             int posX = blockXPos + random.nextInt(maxX);
             int posY = minY + random.nextInt(diffbtwnMinMaxY);
             int posZ = blockZPos + random.nextInt(maxZ);
-            (new WorldGenMinable(block, maxVeinSize, target)).generate(world, random, posX, posY, posZ);
+            BlockPos position = new BlockPos(posX, posY, posZ);
+            (new WorldGenMinable(block, maxVeinSize, BlockHelper.forBlock(target))).generate(world, random, position);
         }
     }
 }

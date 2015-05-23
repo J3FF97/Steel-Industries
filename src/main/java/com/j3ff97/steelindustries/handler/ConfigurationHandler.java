@@ -1,10 +1,10 @@
 package com.j3ff97.steelindustries.handler;
 
 import com.j3ff97.steelindustries.reference.Reference;
-import cpw.mods.fml.client.event.ConfigChangedEvent;
-import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.config.Property;
+import net.minecraftforge.fml.client.event.ConfigChangedEvent;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import java.io.File;
 
@@ -18,7 +18,7 @@ public class ConfigurationHandler
     public static int graphiteBurnTime = 3200;
     public static boolean flintAndSteel = true;
 
-    public static boolean testBoolean = true;
+
 
     public static void init(File configFile)
     {
@@ -49,8 +49,6 @@ public class ConfigurationHandler
         desc = "Wether or not to use Steel for flint and steel.";
         flintAndSteel = getBool("flintAndSteel", flintAndSteel, desc);
 
-        desc = "TestBoolean";
-        testBoolean = getBool("testBool", testBoolean, desc);
 
         if(configuration.hasChanged())
         {

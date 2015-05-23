@@ -53,6 +53,11 @@ tile.steelindustries:blockTitanium.name=Titanium Block
 tile.steelindustries:blockSteel.name=Steel Block
 tile.steelindustries:oreSilicon.name=Silicon Ore
 tile.steelindustries:barSteel.name=Steel Bars
+tile.steelindustries:highOven.name=High Oven
+tile.steelindustries:lit_highOven.name=High Oven
+
+container:highOven=High Oven
+
 
 tc.research_category.STEELINDUSTRIES=Industrial Magic
 

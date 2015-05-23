@@ -1,33 +1,22 @@
 package com.j3ff97.steelindustries.init;
 
-
 import com.j3ff97.steelindustries.handler.ConfigurationHandler;
-import com.j3ff97.steelindustries.handler.ResearchHandler;
-import cpw.mods.fml.common.Loader;
-import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fml.common.Loader;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
-import thaumcraft.api.ThaumcraftApi;
-import thaumcraft.api.aspects.Aspect;
-import thaumcraft.api.aspects.AspectList;
 
 public class Recipes
 {
-    public static void initCrafting()
+    public static void init()
     {
         initCraftingRecipes();
         initShapelessRecipes();
         initSmeltingRecipes();
 
-        if(Loader.isModLoaded("Thaumcraft"))
-        {
-            initArcaneRecipes();
-            initCrucibleRecipes();
-            initInfernalBonus();
-        }
     }
 
     public static void initCraftingRecipes()
@@ -62,7 +51,7 @@ public class Recipes
 
         GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.shearsSteel), " X ", "X  ", 'X', "ingotSteel"));
 
-        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.sickleSteel), " X ", "  X", "YX ", 'X', "ingotSteel", 'Y', "stickWood"));
+       // GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.sickleSteel), " X ", "  X", "YX ", 'X', "ingotSteel", 'Y', "stickWood"));
 
         GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.steelBoots), "X X", "X X", 'X', "ingotSteel"));
 
@@ -84,7 +73,7 @@ public class Recipes
 
         GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.shearsTitanium), " X ", "X  ", 'X', "ingotTitanium"));
 
-        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.sickleTitanium), " X ", "  X", "YX ", 'X', "ingotTitanium", 'Y', "stickWood"));
+       // GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.sickleTitanium), " X ", "  X", "YX ", 'X', "ingotTitanium", 'Y', "stickWood"));
 
         GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.titaniumBoots), "X X", "X X", 'X', "ingotTitanium"));
 
@@ -94,9 +83,9 @@ public class Recipes
 
         GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.titaniumLeggings), "XXX", "X X", "X X", 'X', "ingotTitanium"));
 
-        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.itemSteelMesh, 4), " Y ", "YXY", " Y ", 'X', "ingotSteel", 'Y', ModBlocks.steelBars));
+        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModItems.itemSteelMesh, 4), " Y ", "YXY", " Y ", 'X', "ingotSteel", 'Y', ModBlocks.barsSteel));
 
-        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModBlocks.steelBars, 16), "XXX", "XXX", 'X', "ingotSteel"));
+        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModBlocks.barsSteel, 16), "XXX", "XXX", 'X', "ingotSteel"));
 
         GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(Blocks.torch, 6), " X ", " Y ", 'X', ModItems.chunkGraphite, 'Y', "stickWood"));
 
@@ -123,25 +112,7 @@ public class Recipes
         GameRegistry.addSmelting(ModItems.rawSilicon, new ItemStack(ModItems.refinedSilicon), 0.5F);
         GameRegistry.addSmelting(ModBlocks.oreRutile, new ItemStack(ModItems.ingotTitanium), 1.0F);
         GameRegistry.addSmelting(ModBlocks.oreGraphite, new ItemStack(ModItems.chunkGraphite), 0.5F);
-        GameRegistry.addSmelting(ModItems.itemIronCompound, new ItemStack(ModItems.ingotSteel), 0.8F);
         GameRegistry.addSmelting(ModBlocks.oreSilicon, new ItemStack(ModItems.rawSilicon), 0.5F);
     }
 
-    public static void initArcaneRecipes()
-    {
-        ResearchHandler.recipe.put("CAP_steel", ThaumcraftApi.addArcaneCraftingRecipe("CAP_steel", new ItemStack(ModItems.wandCapSteel), new AspectList().add(Aspect.ORDER, 4).add(Aspect.EARTH, 4).add(Aspect.AIR, 4), "SSS", "S S", 'S', new ItemStack(ModItems.nuggetSteel)));
-        ResearchHandler.recipe.put("CAP_titanium", ThaumcraftApi.addArcaneCraftingRecipe("CAP_titanium", new ItemStack(ModItems.wandCapTitanium), new AspectList().add(Aspect.ORDER, 5).add(Aspect.EARTH, 5).add(Aspect.AIR, 5), "SSS", "S S", 'S', new ItemStack(ModItems.nuggetTitanium)));
-    }
-
-    public static void initCrucibleRecipes()
-    {
-        ResearchHandler.recipe.put("steel_transmutation", ThaumcraftApi.addCrucibleRecipe("steel_transmutation", new ItemStack(ModItems.nuggetSteel, 3, 0), new ItemStack(ModItems.nuggetSteel), new AspectList().merge(Aspect.METAL, 2).merge(Aspect.ARMOR, 1)));
-        ResearchHandler.recipe.put("titanium_transmutation", ThaumcraftApi.addCrucibleRecipe("titanium_transmutation", new ItemStack(ModItems.nuggetTitanium, 3, 0), new ItemStack(ModItems.nuggetTitanium), new AspectList().merge(Aspect.METAL, 2).merge(Aspect.ARMOR, 1)));
-    }
-
-    public static void initInfernalBonus()
-    {
-        ThaumcraftApi.addSmeltingBonus("oreRutile", new ItemStack(ModItems.nuggetTitanium, 0, 0));
-        ThaumcraftApi.addSmeltingBonus(new ItemStack(ModItems.itemIronCompound), new ItemStack(ModItems.nuggetSteel, 0, 0));
-    }
 }

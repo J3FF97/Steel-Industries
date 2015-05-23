@@ -10,40 +10,28 @@ buildscript {
             url = "https://oss.sonatype.org/content/repositories/snapshots/"
         }
     }
-    dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT'
-    }
+    dependencies { classpath 'net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT' }
 }
 
-apply plugin: 'forge'
+apply plugin:"forge"
 
-version = "1.7.10-0.7"
-group= "com.j3ff97.steelindustries" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "steelindustries"
+group = 'com.j3ff97.steelndustries'
+version = "1.8-1.0"
+archivesBaseName = 'Steel Industries'
 
-minecraft {
-    version = "1.7.10-10.13.2.1291"
-    runDir = "eclipse"
+minecraft{
+    version = "1.8-11.14.1.1334"
+    runDir = "run"
+
+    replace "@MOD_VERSION@" , project.version
+    replaceIn "Reference.java"
 }
 
-dependencies {
-    // you may put jars on which you depend on in ./libs
-    // or you may define them like so..
-    //compile "some.group:artifact:version:classifier"
-    //compile "some.group:artifact:version"
-      
-    // real examples
-    //compile 'com.mod-buildcraft:buildcraft:6.0.8:dev'  // adds buildcraft to the dev env
-    //compile 'com.googlecode.efficient-java-matrix-library:ejml:0.24' // adds ejml to the dev env
+logger.lifecycle ""+version
+version = "$version"
+logger.lifecycle ""+version
 
-    // for more info...
-    // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
-    // http://www.gradle.org/docs/current/userguide/dependency_management.html
-
-}
-
-processResources
-{
+processResources {
     // this will ensure that this task is redone when the versions change.
     inputs.property "version", project.version
     inputs.property "mcversion", project.minecraft.version
@@ -51,13 +39,64 @@ processResources
     // replace stuff in mcmod.info, nothing else
     from(sourceSets.main.resources.srcDirs) {
         include 'mcmod.info'
-                
+
         // replace version and mcversion
         expand 'version':project.version, 'mcversion':project.minecraft.version
     }
-        
+
     // copy everything else, thats not the mcmod.info
     from(sourceSets.main.resources.srcDirs) {
         exclude 'mcmod.info'
     }
+}
+
+repositories {
+    maven { // The repo from which to get waila
+        name "Mobius Repo"
+        url "http://mobiusstrip.eu/maven"
+    }
+    maven { // the repo from which to get NEI and stuff
+        name 'CB Repo'
+        url "http://chickenbones.net/maven/"
+    }
+}
+
+dependencies {
+    // WAILA
+    compile "mcp.mobius.waila:Waila:1.6.0_B1_1.8.1"
+
+    // CodeChicken
+    compile "codechicken:CodeChickenCore:1.8-1.0.5.34:dev"
+   // compile "codechicken:NotEnoughItems:1.8-1.0.5.96:dev"
+    compile "codechicken:CodeChickenLib:1.8-1.1.2.133:dev"
+}
+
+// because the normal output has been made to be obfuscated
+task deobfJar(type: Jar) {
+    from sourceSets.main.output
+    classifier = 'dev'
+}
+
+// add a source jar
+task sourceJar(type: Jar, dependsOn: "sourceMainJava") {
+    from "build/sources/java"
+    classifier = 'sources'
+}
+
+// add a javadoc jar
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from 'build/docs/javadoc'
+}
+
+// deployment stuff
+
+configurations { deployerJars }
+
+dependencies { deployerJars "org.apache.maven.wagon:wagon-ssh:2.2" }
+
+artifacts {
+    archives sourceJar
+    archives deobfJar
+    archives javadocJar
 }

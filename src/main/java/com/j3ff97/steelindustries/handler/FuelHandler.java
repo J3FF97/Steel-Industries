@@ -1,8 +1,8 @@
 package com.j3ff97.steelindustries.handler;
 
 import com.j3ff97.steelindustries.init.ModItems;
-import cpw.mods.fml.common.IFuelHandler;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fml.common.IFuelHandler;
 
 public class FuelHandler implements IFuelHandler
 {

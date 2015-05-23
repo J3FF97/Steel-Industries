@@ -1,0 +1,7 @@
+{
+"parent":"steelindustries:item/itemTemplate",
+"textures":
+{
+"layer0":"steelindustries:items/ingotSteel"
+}
+}

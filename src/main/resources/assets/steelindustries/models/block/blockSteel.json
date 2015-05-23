@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "particle": "steelindustries:blocks/blockSteel_side",
+    "down": "steelindustries:blocks/blockSteel_bottom",
+    "up": "steelindustries:blocks/blockSteel_top",
+    "north": "steelindustries:blocks/blockSteel_side",
+    "east": "steelindustries:blocks/blockSteel_side",
+    "south": "steelindustries:blocks/blockSteel_side",
+    "west": "steelindustries:blocks/blockSteel_side"
+  }
+}

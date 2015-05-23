@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "normal":       { "model": "steelindustries:highOven" },
+    "facing=north": { "model": "steelindustries:lit_highOven" },
+    "facing=south": { "model": "steelindustries:lit_highOven", "y": 180 },
+    "facing=west":  { "model": "steelindustries:lit_highOven", "y": 270 },
+    "facing=east":  { "model": "steelindustries:lit_highOven", "y": 90 }
+  }
+}

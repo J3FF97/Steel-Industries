@@ -14,6 +14,7 @@ public final class Names
         public static final String chunkGraphiteName    = "chunkGraphite";
         public static final String rawSiliconName       = "rawSilicon";
         public static final String refinedSiliconName   = "refinedSilicon";
+        public static final String bucketMoltenSteelName = "bucketOfMoltenSteel";
     }
 
     public static final class Blocks
@@ -24,7 +25,14 @@ public final class Names
         public static final String oreSiliconName     = "oreSilicon";
         public static final String oreGraphiteName    = "oreGraphite";
         public static final String blockTitaniumName  = "blockTitanium";
-        public static final String barSteelName        = "barSteel";
+        public static final String barSteelName       = "barSteel";
+        public static final String wallSteelName      = "wallSteel";
+    }
+
+    public static final class TileEntities
+    {
+        public static final String blockHighOvenName = "highOven";
+        public static final String lit_blockHighOvenName = "lit_highOven";
     }
 
     public static final class Tools
@@ -47,6 +55,8 @@ public final class Names
         public static final String hoeTitaniumName     = "hoeTitanium";
         public static final String shearsTitaniumName  = "shearsTitanium";
         public static final String sickleTitaniumName  = "sickleTitanium";
+
+        public static final String steelWrenchName  = "steelWrench";
 
     }
 
@@ -76,11 +86,26 @@ public final class Names
         public static final String titaniumTag = "titanium";
     }
 
-    public class Text
+    public static final class Text
     {
         public static final String CAP_steel              = "steelCap.research.text";
         public static final String CAP_titanium           = "titaniumCap.research.text";
         public static final String steel_transmutation    = "steelTrans.research.text";
         public static final String titanium_transmutation = "titaniumTrans.research.text";
+    }
+
+    public static final class NBT
+    {
+        public static final String ITEMS = "Items";
+        public static final String UUID_MOST_SIG = "UUIDMostSig";
+        public static final String UUID_LEAST_SIG = "UUIDLeastSig";
+        public static final String DISPLAY = "display";
+        public static final String COLOR = "color";
+        public static final String STATE = "teState";
+        public static final String CUSTOM_NAME = "CustomName";
+        public static final String DIRECTION = "teDirection";
+        public static final String OWNER = "owner";
+        public static final String OWNER_UUID_MOST_SIG = "ownerUUIDMostSig";
+        public static final String OWNER_UUID_LEAST_SIG = "ownerUUIDLeastSig";
     }
 }
