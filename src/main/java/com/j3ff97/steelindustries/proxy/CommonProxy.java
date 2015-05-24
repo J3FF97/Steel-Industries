@@ -33,10 +33,6 @@ public class CommonProxy
 
         ModBlocks.init();
         LogHelper.info("SteelIndustries: Initialized Blocks");
-
-        TileEntities.init();
-        LogHelper.info("SteelIndustries: Initialized TileEntities");
-
     }
 
     public void init(FMLInitializationEvent e)
@@ -46,6 +42,11 @@ public class CommonProxy
             RecipeRemover.removeRecipes(Items.flint_and_steel);
             LogHelper.info("SteelIndustries: Removed Recipes");
         }
+
+        NetworkRegistry.INSTANCE.registerGuiHandler(SteelIndustries.instance, new GuiHandler());
+
+        TileEntities.init();
+        LogHelper.info("SteelIndustries: Initialized Tile Entities");
 
         Recipes.init();
         LogHelper.info("SteelIndustries: Initialized Crafting");
@@ -59,7 +60,6 @@ public class CommonProxy
         GameRegistry.registerWorldGenerator(new OreGen(), 2);
         LogHelper.info("SteelIndustries: Initialized OreGen");
 
-        NetworkRegistry.INSTANCE.registerGuiHandler(SteelIndustries.instance, new GuiHandler());
     }
 
     public void postInit(FMLPostInitializationEvent e)

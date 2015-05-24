@@ -56,7 +56,7 @@ tile.steelindustries:barSteel.name=Steel Bars
 tile.steelindustries:highOven.name=High Oven
 tile.steelindustries:lit_highOven.name=High Oven
 
-container:highOven=High Oven
+container.highOven=High Oven
 
 
 tc.research_category.STEELINDUSTRIES=Industrial Magic

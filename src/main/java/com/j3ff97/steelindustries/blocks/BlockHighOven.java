@@ -1,15 +1,19 @@
 package com.j3ff97.steelindustries.blocks;
 
-import codechicken.lib.math.MathHelper;
+import com.j3ff97.steelindustries.SteelIndustries;
 import com.j3ff97.steelindustries.handler.CreativeTab;
+import com.j3ff97.steelindustries.init.ModBlocks;
+import com.j3ff97.steelindustries.reference.GuiIDs;
+import com.j3ff97.steelindustries.tileentity.TileEntityHighOven;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyDirection;
+import net.minecraft.block.state.BlockState;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.tileentity.TileEntityFurnace;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.world.World;
@@ -87,16 +91,85 @@ public class BlockHighOven extends BlockContainerSI
         {
             TileEntity tileentity = world.getTileEntity(pos);
 
-            if (tileentity instanceof TileEntityFurnace)
+            if(tileentity instanceof TileEntityHighOven)
             {
-                ((TileEntityFurnace)tileentity).setCustomInventoryName(stack.getDisplayName());
+                ((TileEntityHighOven) tileentity).setCustomInventoryName(stack.getDisplayName());
             }
+        }
+    }
+
+    public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer player, EnumFacing side, float hitX, float hitY, float hitZ)
+    {
+
+        if(player.isSneaking())
+        {
+            return false;
+        }
+        else
+        {
+            if(!worldIn.isRemote)
+            {
+                if(worldIn.getTileEntity(pos) instanceof TileEntityHighOven)
+                {
+                    player.openGui(SteelIndustries.instance, GuiIDs.HIGHOVEN.ordinal(), worldIn, pos.getX(), pos.getY(), pos.getZ());
+                }
+            }
+            return true;
+        }
+    }
+
+    public static void updateBlockState(boolean isCooking, World world, BlockPos pos)
+    {
+        IBlockState iblockstate = world.getBlockState(pos);
+        TileEntity tileentity = world.getTileEntity(pos);
+        keepInventory = true;
+
+        if(isCooking)
+        {
+            //           world.setBlockState(pos, ModBlocks.highOven_lit.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)), 3);
+            world.setBlockState(pos, ModBlocks.highOven_lit.getDefaultState(), 3);
+        }
+        else
+        {
+//            world.setBlockState(pos, ModBlocks.highOven.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)), 3);
+            world.setBlockState(pos, ModBlocks.highOven.getDefaultState(), 3);
+        }
+
+        keepInventory = false;
+        world.setBlockState(pos, iblockstate, 2);
+
+        if(tileentity != null)
+        {
+            tileentity.validate();
+            world.setTileEntity(pos, tileentity);
         }
     }
 
     @Override
     public TileEntity createNewTileEntity(World worldIn, int meta)
     {
-        return null;
+        return new TileEntityHighOven();
+    }
+
+    public IBlockState getStateFromMeta(int meta)
+    {
+        EnumFacing enumfacing = EnumFacing.getFront(meta);
+
+        if(enumfacing.getAxis() == EnumFacing.Axis.Y)
+        {
+            enumfacing = EnumFacing.NORTH;
+        }
+
+        return this.getDefaultState().withProperty(FACING, enumfacing);
+    }
+
+    public int getMetaFromState(IBlockState state)
+    {
+        return ((EnumFacing) state.getValue(FACING)).getIndex();
+    }
+
+    protected BlockState createBlockState()
+    {
+        return new BlockState(this, FACING);
     }
 }

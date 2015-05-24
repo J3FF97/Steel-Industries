@@ -1,10 +1,10 @@
 package com.j3ff97.steelindustries.init;
 
 import com.j3ff97.steelindustries.handler.ConfigurationHandler;
+import com.j3ff97.steelindustries.recipes.HighOvenRecipes;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
@@ -16,6 +16,7 @@ public class Recipes
         initCraftingRecipes();
         initShapelessRecipes();
         initSmeltingRecipes();
+        initHighOvenRecipes();
 
     }
 
@@ -113,6 +114,11 @@ public class Recipes
         GameRegistry.addSmelting(ModBlocks.oreRutile, new ItemStack(ModItems.ingotTitanium), 1.0F);
         GameRegistry.addSmelting(ModBlocks.oreGraphite, new ItemStack(ModItems.chunkGraphite), 0.5F);
         GameRegistry.addSmelting(ModBlocks.oreSilicon, new ItemStack(ModItems.rawSilicon), 0.5F);
+    }
+
+    public static void initHighOvenRecipes()
+    {
+        HighOvenRecipes.addSmelting(Items.iron_ingot, Items.coal, new ItemStack(ModItems.ingotSteel));
     }
 
 }
