@@ -1,54 +1,57 @@
 package com.j3ff97.steelindustries.block;
 
 import com.j3ff97.steelindustries.creativetab.CreativeTab;
-import com.j3ff97.steelindustries.init.ModItems;
 import com.j3ff97.steelindustries.reference.Reference;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
-import net.minecraft.item.Item;
+import net.minecraft.util.IIcon;
 
-import java.util.Random;
-
-public class OreGraphite extends Block
+public class BlockSIMulti extends Block
 {
-    public OreGraphite(String name, Material material, String toolClass, int harvestLevel, float hardness, float resistance, SoundType stepSound)
+    private IIcon[] icons = new IIcon[3];
+
+    public BlockSIMulti(String name, Material material, String toolClass, int harvestLevel, float hardness, float resistance, SoundType stepSound)
     {
         super(material);
         this.setBlockName(name);
         this.setBlockTextureName(Reference.ID + ":" + name);
         this.setHarvestLevel(toolClass, harvestLevel);
-        this.setCreativeTab(CreativeTab.tabSIBlocks);
         this.setHardness(hardness);
         this.setResistance(resistance);
         this.setStepSound(stepSound);
+        this.setCreativeTab(CreativeTab.tabSIBlocks);
     }
 
     @Override
-    public Item getItemDropped(int par1, Random random, int par2)
+    public void registerBlockIcons(IIconRegister reg)
     {
-        return ModItems.chunkGraphite;
+        for (int i = 0; i < icons.length; i ++)
+        {
+            this.icons[i] = reg.registerIcon(this.textureName + "_" + i);
+        }
     }
 
     @Override
-    public int quantityDropped(Random random)
+    public IIcon getIcon(int side, int meta)
     {
-        return 1;
+        switch(side)
+        {
+            case 0:
+                return icons[0];
+            case 1:
+                return icons[1];
+            case 2:
+                return icons[2];
+            default:
+                return icons[2];
+        }
     }
 
     @Override
     public String getUnlocalizedName()
     {
         return String.format("tile.%s%s", Reference.ID.toLowerCase() + ":", getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
-    }
-
-    @Override
-    @SideOnly(Side.CLIENT)
-    public void registerBlockIcons(IIconRegister iconRegister)
-    {
-        blockIcon = iconRegister.registerIcon(String.format("%s", getUnwrappedUnlocalizedName(this.getUnlocalizedName())));
     }
 
     protected String getUnwrappedUnlocalizedName(String unlocalizedName)

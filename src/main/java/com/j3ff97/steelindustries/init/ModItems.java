@@ -5,6 +5,7 @@ import com.j3ff97.steelindustries.item.*;
 import com.j3ff97.steelindustries.reference.Names;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraftforge.oredict.OreDictionary;
 
 public class ModItems
 {
@@ -81,6 +82,12 @@ public class ModItems
         titaniumChestplate = new TitaniumArmorSI(Names.Armor.chestplateTitaniumName, MaterialHandler.TitaniumArmor, "titanium", 1);
         titaniumHelmet = new TitaniumArmorSI(Names.Armor.helmetTitaniumName, MaterialHandler.TitaniumArmor, "titanium", 0);
 
+        registerItems();
+        registerOreDict();
+    }
+
+    public static void registerItems()
+    {
         GameRegistry.registerItem(ingotSteel, Names.Items.ingotSteelName);
         GameRegistry.registerItem(nuggetSteel, Names.Items.nuggetSteelName);
         GameRegistry.registerItem(axeSteel, Names.Tools.axeSteelName);
@@ -118,5 +125,21 @@ public class ModItems
             GameRegistry.registerItem(wandCapSteel, Names.Addons.wandCapSteelName);
             GameRegistry.registerItem(wandCapTitanium, Names.Addons.wandCapTitaniumName);
         }
+    }
+
+    public static void registerOreDict()
+    {
+        OreDictionary.registerOre("ingotSteel", ModItems.ingotSteel);
+        OreDictionary.registerOre("nuggetSteel", ModItems.nuggetSteel);
+
+        OreDictionary.registerOre("ingotTitanium", ModItems.ingotTitanium);
+        OreDictionary.registerOre("nuggetTitanium", ModItems.nuggetTitanium);
+
+        OreDictionary.registerOre("itemSilicon", ModItems.refinedSilicon);
+        OreDictionary.registerOre("itemRubber", ModItems.refinedSilicon);
+
+        OreDictionary.registerOre("barGraphite", ModItems.chunkGraphite);
+        OreDictionary.registerOre("ingotGraphite", ModItems.chunkGraphite);
+        OreDictionary.registerOre("chunkGraphite", ModItems.chunkGraphite);
     }
 }

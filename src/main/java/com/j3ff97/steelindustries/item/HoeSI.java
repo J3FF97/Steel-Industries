@@ -1,6 +1,6 @@
 package com.j3ff97.steelindustries.item;
 
-import com.j3ff97.steelindustries.handler.CreativeTab;
+import com.j3ff97.steelindustries.creativetab.CreativeTab;
 import com.j3ff97.steelindustries.reference.Reference;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;

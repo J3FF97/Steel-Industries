@@ -1,6 +1,6 @@
-package com.j3ff97.steelindustries.block.base;
+package com.j3ff97.steelindustries.block;
 
-import com.j3ff97.steelindustries.handler.CreativeTab;
+import com.j3ff97.steelindustries.creativetab.CreativeTab;
 import com.j3ff97.steelindustries.reference.Reference;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -10,12 +10,15 @@ import net.minecraft.client.renderer.texture.IIconRegister;
 
 public class BlockSI extends Block
 {
-    public BlockSI(String name, Material material, String toolClass,  int harvestLevel)
+    public BlockSI(String name, Material material, String toolClass, int harvestLevel, float hardness, float resistance, SoundType stepSound)
     {
         super(material);
         this.setBlockName(name);
         this.setBlockTextureName(Reference.ID + ":" + name);
         this.setHarvestLevel(toolClass, harvestLevel);
+        this.setHardness(hardness);
+        this.setResistance(resistance);
+        this.setStepSound(stepSound);
         this.setCreativeTab(CreativeTab.tabSIBlocks);
     }
 

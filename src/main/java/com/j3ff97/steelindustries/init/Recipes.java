@@ -16,7 +16,7 @@ import thaumcraft.api.aspects.AspectList;
 
 public class Recipes
 {
-    public static void initCrafting()
+    public static void init()
     {
         initCraftingRecipes();
         initShapelessRecipes();
