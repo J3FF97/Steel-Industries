@@ -38,6 +38,7 @@ public class OreGen implements IWorldGenerator
         addOreSpawn(ModBlocks.oreGraphite, world, random, Blocks.coal_ore, x, z, 8, 8, 25, ConfigurationHandler.oreGraphiteSpawnChance, 0, 128);
         addOreSpawn(ModBlocks.oreRutile, world, random, Blocks.stone, x, z, 8, 8, 7, ConfigurationHandler.oreRutileSpawnChance, 0, 16);
         addOreSpawn(ModBlocks.oreSilicon, world, random, Blocks.sand, x, z, 8, 8, 5, ConfigurationHandler.oreSiliconSpawnChance, 0, 128);
+        addOreSpawn(ModBlocks.highOven, world, random, Blocks.furnace, x, z, 8, 8, 1, 40, 0, 256);
     }
 
     private void generateNether(World world, Random random, int x, int z)

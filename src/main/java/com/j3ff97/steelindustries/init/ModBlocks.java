@@ -17,6 +17,9 @@ public class ModBlocks
     public static BarsSteel   steelBars;
     public static BlockFalling oreSilicon;
 
+    public static Block highOven;
+    public static Block highOven_lit;
+
     public static void init()
     {
         blockSteel = new BlockSIMulti(Names.Blocks.blockSteelName, Material.iron, "pickaxe", 2, 5F, 30F, Block.soundTypeMetal);
@@ -25,6 +28,9 @@ public class ModBlocks
         oreRutile = new BlockSI(Names.Blocks.oreRutileName, Material.rock, "pickaxe", 2, 3F, 15F, Block.soundTypeStone);
         oreSilicon = new OreSilicon(Names.Blocks.oreSiliconName, Material.sand, "shovel", 0, 1F, 5F, Block.soundTypeSand);
         steelBars = new BarsSteel(Names.Blocks.barSteelName, "steelIndustries:steel_bars", "steelIndustries:steel_bars", Material.iron, true, "pickaxe", 2, 5F, 30F, Block.soundTypeMetal);
+        highOven = new BlockHighOven(false, Names.TileEntities.blockHighOvenName, Material.iron, 5F, 30F, Block.soundTypeMetal, "pickaxe", 2);
+        highOven_lit = new BlockHighOven(true, Names.TileEntities.blockHighOvenName, Material.iron, 5F, 30F, Block.soundTypeMetal, "pickaxe", 2).setLightLevel(0.875F);
+
 
         registerBlocks();
         registerOreDict();
@@ -38,6 +44,9 @@ public class ModBlocks
         GameRegistry.registerBlock(oreRutile, Names.Blocks.oreRutileName);
         GameRegistry.registerBlock(oreSilicon, Names.Blocks.oreSiliconName);
         GameRegistry.registerBlock(steelBars, Names.Blocks.barSteelName);
+
+        GameRegistry.registerBlock(highOven, Names.TileEntities.blockHighOvenName);
+        GameRegistry.registerBlock(highOven_lit, Names.TileEntities.lit_blockHighOvenName);
     }
 
     public static void registerOreDict()

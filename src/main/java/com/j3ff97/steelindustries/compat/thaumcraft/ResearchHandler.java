@@ -1,4 +1,4 @@
-package com.j3ff97.steelindustries.handler;
+package com.j3ff97.steelindustries.compat.thaumcraft;
 
 import com.j3ff97.steelindustries.init.ModBlocks;
 import com.j3ff97.steelindustries.init.ModItems;

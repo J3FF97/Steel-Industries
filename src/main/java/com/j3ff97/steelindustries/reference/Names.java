@@ -83,4 +83,10 @@ public final class Names
         public static final String steel_transmutation    = "steelTrans.research.text";
         public static final String titanium_transmutation = "titaniumTrans.research.text";
     }
+
+    public static final class TileEntities
+    {
+        public static final String blockHighOvenName = "blockHighOven";
+        public static final String lit_blockHighOvenName = "lit_blockHighOven";
+    }
 }

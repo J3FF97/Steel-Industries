@@ -2,11 +2,13 @@ package com.j3ff97.steelindustries.init;
 
 
 import com.j3ff97.steelindustries.handler.ConfigurationHandler;
-import com.j3ff97.steelindustries.handler.ResearchHandler;
+import com.j3ff97.steelindustries.compat.thaumcraft.ResearchHandler;
+import com.j3ff97.steelindustries.recipe.HighOvenRecipes;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
@@ -21,6 +23,7 @@ public class Recipes
         initCraftingRecipes();
         initShapelessRecipes();
         initSmeltingRecipes();
+        initHighOvenRecipes();
 
         if(Loader.isModLoaded("Thaumcraft"))
         {
@@ -143,5 +146,10 @@ public class Recipes
     {
         ThaumcraftApi.addSmeltingBonus("oreRutile", new ItemStack(ModItems.nuggetTitanium, 0, 0));
         ThaumcraftApi.addSmeltingBonus(new ItemStack(ModItems.itemIronCompound), new ItemStack(ModItems.nuggetSteel, 0, 0));
+    }
+
+    public static void initHighOvenRecipes()
+    {
+        HighOvenRecipes.addSmelting(Items.coal, Item.getItemFromBlock(Blocks.iron_ore), new ItemStack(ModItems.ingotSteel));
     }
 }

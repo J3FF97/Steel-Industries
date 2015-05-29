@@ -1,11 +1,13 @@
 package com.j3ff97.steelindustries;
 
 import com.j3ff97.steelindustries.proxy.CommonProxy;
+import com.j3ff97.steelindustries.recipe.HighOvenRecipes;
 import com.j3ff97.steelindustries.reference.Reference;
 import com.j3ff97.steelindustries.utility.LogHelper;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLInterModComms;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
@@ -36,6 +38,9 @@ public class SteelIndustries
 
         proxy.init(event);
 
+        FMLInterModComms.sendMessage("Waila", "register", "com.j3ff97.steelindustries.compat.waila.WailaDataProvider.callBackRegister");
+        LogHelper.info("SteelIndustries: Registered Waila Addon");
+
         LogHelper.info("SteelIndustries: Init Complete");
     }
 
@@ -49,4 +54,5 @@ public class SteelIndustries
         LogHelper.info("SteelIndustries: PostInit Complete");
         LogHelper.info("SteelIndustries: Ready to rock!");
     }
+
 }

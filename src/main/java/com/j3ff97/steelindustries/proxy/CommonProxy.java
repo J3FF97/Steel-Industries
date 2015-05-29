@@ -2,6 +2,7 @@ package com.j3ff97.steelindustries.proxy;
 
 
 import com.j3ff97.steelindustries.SteelIndustries;
+import com.j3ff97.steelindustries.compat.thaumcraft.ResearchHandler;
 import com.j3ff97.steelindustries.handler.*;
 import com.j3ff97.steelindustries.init.ModBlocks;
 import com.j3ff97.steelindustries.init.ModItems;
@@ -36,6 +37,9 @@ public class CommonProxy
 
     public void init(FMLInitializationEvent e)
     {
+        TileEntities.init();
+        LogHelper.info("SteelIndustries: Initialized Tile Entities");
+
         if(ConfigurationHandler.flintAndSteel)
         {
             RecipeRemover.removeRecipes(Items.flint_and_steel);
@@ -43,9 +47,6 @@ public class CommonProxy
         }
 
         NetworkRegistry.INSTANCE.registerGuiHandler(SteelIndustries.instance, new GuiHandler());
-
-        TileEntities.init();
-        LogHelper.info("SteelIndustries: Initialized Tile Entities");
 
         Recipes.init();
         LogHelper.info("SteelIndustries: Initialized Crafting");

@@ -2,15 +2,19 @@
 tile.null.name=Bro, missed something?
 item.null.name=Bro, missed something?
 
+--Creative Tabs
 itemGroup.tabSIItems=Steel Industries Items
 itemGroup.tabSIBlocks=Steel Industries Blocks
 
+--Config
 graphiteBurnTimeName=Graphite Burn Time
 oreRutileSpawnChance=Spawn Chance: Rutile Ore
 oreGraphiteSpawnChance=Spawn Chance: Graphite Ore
 oreSiliconSpawnChance=Spawn Chance: Silicon Ore
 flintAndSteel=Use Steel For Flint And Steel
 
+
+-_Items
 item.steelindustries:ingotSteel.name=Steel Ingot
 item.steelindustries:nuggetSteel.name=Steel Nugget
 item.steelindustries:itemIronCompound.name=Iron Coal Compound
@@ -47,6 +51,8 @@ item.steelindustries:chestplateTitanium.name=Titanium Chestplate
 item.steelindustries:legsTitanium.name=Titanium Leggings
 item.steelindustries:bootsTitanium.name=Titanium Boots
 
+
+--Blocks
 tile.steelindustries:oreRutile.name=Rutile Ore
 tile.steelindustries:oreGraphite.name=Graphite Ore
 tile.steelindustries:blockTitanium.name=Titanium Block
@@ -54,6 +60,17 @@ tile.steelindustries:blockSteel.name=Steel Block
 tile.steelindustries:oreSilicon.name=Silicon Ore
 tile.steelindustries:barSteel.name=Steel Bars
 
+--Tile Entities
+tile.steelindustries:blockHighOven.name=High Oven
+
+--GUI
+container.highOven=High Oven
+
+--Waila
+blockHighOven=High Oven
+
+
+--Thaumcraft
 tc.research_category.STEELINDUSTRIES=Industrial Magic
 
 item.Wand.steel.cap=Steel Reinforced
